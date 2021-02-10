@@ -50,7 +50,8 @@ You can connect to all nodes using student user and submiting the private key e.
 In order to install first kubernetes master node connect to ckamaster1 and execute:  
 ```
 $ sudo -i
-# apt install docker.io kubeadm=1.15.1-00 kubectl=1.15.1-00 kubelet=1.15.1-00
+# apt install kubeadm=1.20.2-00 kubectl=1.20.2-00 kubelet=1.20.2-00
+# apt-mark hold kubelet kubeadm kubectl
 # kubeadm init --config=kubeadm-config.yaml --upload-certs| tee kubeadm-init.out
 ```  
 Now it's your turn to figure how to add additional worker or master nodes. Have fun!
