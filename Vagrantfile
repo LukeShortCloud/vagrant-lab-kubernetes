@@ -7,6 +7,7 @@ end
 
 Vagrant.configure("2") do |config|
   config.vm.base_mac = nil
+  config.vm.box = "generic/ubuntu2004"
 
 # Provider-specific configuration -- VirtualBox
   config.vm.provider "virtualbox" do |vb|
@@ -22,7 +23,6 @@ Vagrant.configure("2") do |config|
       vb.name = "ckamaster1"
     end
 
-    ckamaster1.vm.box = "ubuntu/xenial64"
     ckamaster1.vm.hostname = "ckamaster1"
     ckamaster1.vm.network "private_network", ip: "192.168.56.101"
     ckamaster1.vm.network "forwarded_port", guest: 8001, host: 9001
@@ -39,7 +39,6 @@ Vagrant.configure("2") do |config|
       vb.name = "ckamaster2"
     end
 
-    ckamaster2.vm.box = "ubuntu/xenial64"
     ckamaster2.vm.hostname = "ckamaster2"
     ckamaster2.vm.network "private_network", ip: "192.168.56.102"
     ckamaster2.vm.provision :shell, path: "provision.sh"
@@ -54,7 +53,6 @@ Vagrant.configure("2") do |config|
       vb.name = "ckamaster3"
     end
 
-    ckamaster3.vm.box = "ubuntu/xenial64"
     ckamaster3.vm.hostname = "ckamaster3"
     ckamaster3.vm.network "private_network", ip: "192.168.56.103"
     ckamaster3.vm.provision :shell, path: "provision.sh"
@@ -69,7 +67,6 @@ Vagrant.configure("2") do |config|
       vb.name = "ckaworker1"
     end
 
-    ckaworker1.vm.box = "ubuntu/xenial64"
     ckaworker1.vm.hostname = "ckaworker1"
     ckaworker1.vm.network "private_network", ip: "192.168.56.104"
     ckaworker1.vm.provision :shell, path: "provision.sh"
@@ -84,7 +81,6 @@ Vagrant.configure("2") do |config|
       vb.name = "ckalb"
     end
 
-    ckalb.vm.box = "ubuntu/xenial64"
     ckalb.vm.hostname = "ckalb"
     ckalb.vm.network "private_network", ip: "192.168.56.100"
     ckalb.vm.provision :shell, path: "provision.sh"
