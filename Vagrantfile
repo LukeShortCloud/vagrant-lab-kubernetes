@@ -14,6 +14,9 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--groups", "/" + "CKA"]
   end
 
+  # Use NFS to share the `pwd` with the VMs.
+  config.vm.synced_folder ".", "/vagrant", type: "nfs"
+
   # The kubernetes master
   config.vm.define "ckamaster1" do |ckamaster1|
     ckamaster1.vm.provider "virtualbox" do |vb|
