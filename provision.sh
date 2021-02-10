@@ -27,7 +27,8 @@ chmod 440 /etc/sudoers.d/student
 swapoff -a
 
 # allow ssh between nodes
-cp /vagrant/id_rsa /root/.ssh
+mkdir /root/.ssh
+cp /vagrant/id_rsa /root/.ssh/id_rsa
 cp /vagrant/id_rsa.pub /root/.ssh/authorized_keys
 chmod 0600 /root/.ssh/*
 
