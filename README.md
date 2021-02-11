@@ -70,3 +70,7 @@ $ sudo kubeadm init --config=kubeadm-config.yaml --upload-certs 2> /dev/stdout |
 ```
 
 - On the other nodes, install the same container runtime and Kubernetes packages. The original `kubeadm init` command from the previous setup will have outputted instructions on how to join new nodes to the cluster.
+
+## License
+
+Apache License Version 2.0.
